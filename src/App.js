@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import "./App.css";
+import Splash from "./Splash";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Grids from "./Grids";
+import { useState } from "react";
+function App(props) {
+  const [userInfo, setuserInfo] = useState({});
+  console.log(userInfo);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="name">
+          <p style={{ color: "white" }}>Word-Finder</p>
+        </div>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<Splash setuserInfo={setuserInfo} />}
+          />
+          <Route exact path="/new" element={<Grids userInfo={userInfo} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
