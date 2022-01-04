@@ -26,7 +26,6 @@ function Splash(props) {
 
   return (
     <React.Fragment>
-      {" "}
       <form className="gridName" onSubmit={handleButton}>
         <label>Add Rows</label>
         <input id="rows" type="number" value={rows} onChange={onChangerc} />

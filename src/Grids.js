@@ -3,10 +3,6 @@ import { Link } from "react-router-dom";
 import "./Grid.css";
 
 export default function Grids(props) {
-  //   const { rows, col } = props.userInfo;
-  let a = props.userInfo.rows;
-
-  console.log(a);
   return (
     <React.Fragment>
       <div>
